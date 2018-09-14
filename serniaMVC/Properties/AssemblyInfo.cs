@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("serniaMVC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("グローリーＡＺシステム株式会社")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("serniaMVC")]
-[assembly: AssemblyCopyright("Copyright © グローリーＡＺシステム株式会社 2015")]
+[assembly: AssemblyCopyright("Copyright")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
