@@ -1,0 +1,276 @@
+﻿@{
+    ViewBag.Title = "Sernia History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section fontCss{
+    @Styles.Render("http://fonts.googleapis.com/css?family=Quicksand")
+    @Styles.Render("~/content/sernia.css")
+
+}
+
+<div class="subHeader">SERNIA</div>
+
+<div class="serniaMain">
+
+    <div class="serniaTopMenu">
+        <ul>
+            <li style="list-style: none; padding: 15px; background-color: white; font-size: 20px; color: slategray;" class="history">HISTORY</li>
+            <li style="list-style: none; padding: 15px; background-color: slategray; color: white; font-size: 20px;" class="skill">SKILL</li>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <div class="serniaSubMenu" style="margin-top: 5px;">
+        <ul>
+            <li style="list-style: none; padding: 5px; background-color: #FFF; font-size: 20px; color: #708090; " class="history_0">SERNIA?</li>
+            <li style="list-style: none; padding: 5px; background-color: #666666; color: #FFF; font-size: 20px; " class="history_1">PROJECT</li>
+            <li style="list-style: none; padding: 5px; background-color: #666666; color: #FFF; font-size: 20px; " class="history_2">NOW..</li>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+
+    <section class="serniaContents" style="margin-top: 30px; width: 860px; height: 150px; background-color: #FFF;">
+        <div style="width: 10px; float:left; margin-top: 30px;" onclick="contentMove('prev')" class="buttonClass"><</div>
+        <ul>
+            <li style="width: 800px;" class="history_0">
+                <div style="width: 500px; word-break: break-all; float: left; text-align: left; font-size: 18px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                <div style="width: 300px; float: left;"></div>
+            </li>
+            <li style="width: 800px; display: none;" class="history_1">
+                <div style="width: 500px; word-break: break-all; float: left; text-align: left; font-size: 18px;">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                <div style="width: 300px; float: left;"></div>
+            </li>
+        </ul>
+        <div style="width: 10px; float: right; margin-top: 30px;" onclick="contentMove('next')" class="buttonClass">></div>
+    </section>
+    
+
+    @*<div>
+            <div style="width: 20%; float: left; padding: 0 0 0 0">
+                <div style="background-color: #0ba141; font-family: tahoma; font-size: 12px; color: #fff; width: 106px; height: 30px; line-height: 2.5em;">history</div>
+                <div style="background-color: #84a10b; font-family: tahoma; font-size: 12px; color: #fff; width: 106px; height: 30px; line-height: 2.5em;">skill</div>
+                <div style="height: 40px;">2015/01/02</div>
+            </div>
+            <div style="width: 75%; float: left; text-align: left;">
+                <div class="history" style="width: 100%; height: 250px; padding: 10px 0 20px 20px;">
+                    <div style="height: 40px;">2015/01/02</div>
+                    <div style="text-align: center; font-size: 25px;">タイトル</div>
+                    <div style="font-family: Tahoma; font-size: 12px; margin-top: 10px;">
+                        ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>*@
+
+    @*<div class="serniaLeft">
+            <span>Sernia History</span>
+            <div class="serniaHistoryContents">
+                何事も初めは難しい、
+                ということわざは、
+                ある意味では真理かもしれないが、
+                より一般的には、
+                何事も初めは容易だ。
+                最後の段階に登ることこそ一番難しく、
+                これに登り得る人間は稀だ、
+                といえる。<br />
+                <span style="font-family:Tahoma; font-size: 11px; color: #ff006e">-Johann Wolfgang von Goethe</span>
+                <br /><br />
+                <span style="font-size: 12px; color: #222; font-family: Tahoma;">
+
+                </span>
+            </div>
+
+
+            <br /><br />
+            <div class="serniaProject">
+                ProJects
+                <ul class="projectMenu">
+                    <li>2000 - 2010</li>
+                    <li>2010 - 2012</li>
+                    <li>2013 - 2014</li>
+                    <li>2015 -</li>
+                </ul>
+                <ul class="projectContents">
+                    <li>
+                        <div>
+                            ケータイNaviシステム<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>PHP</span><span>SilverLight</span>
+                        </div>
+                        <div>
+                            クラウドシステム(ファイル管理)<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                        <div>
+                            参議院議事録システム<br /><br />
+                            <span>VB.Net</span><span>SQL Server</span>
+                        </div>
+                        <div>
+                            血液分類システム<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span>
+                        </div>
+                        <div>
+                            オンライン美術館サイト<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>ActionScript</span><span>JavaScript</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            車関連のポータルサイト(カタログ、SNS)<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                        <div>
+                            オンラインゲームのポータルサイト<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                        <div>
+                            オンラインゲーム(D)ウェブサイト<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                        <div>
+                            オンラインゲーム(L)ウェブサイト<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            オンラインゲーム(T)ウェブサイト<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span><span>Jquery</span>
+                        </div>
+                        <div>
+                            ゲーム関連のSNS<br /><br />
+                            <span>CentOs</span><span>RubyOnRails</span><span>MySql</span><span>Ngix</span>
+                        </div>
+                        <div>
+                            Flashゲーム開発(ウェブブラウザ)<br /><br />
+                            <span>CentOs</span><span>PHP</span><span>MySql</span><span>Ngix</span><span>Flex</span><span>ActionScript</span>
+                        </div>
+                        <div>
+                            モバイルゲーム開発<br /><br />
+                            <span>CentOs</span><span>PHP</span><span>MySql</span><span>Unity</span>
+                        </div>
+                        <div>
+                            Mobageゲーム開発<br /><br />
+                            <span>PHP</span><span>Unity</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            金融、管理機システム<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span>
+                        </div>
+                        <div>
+                            金融、ファイル分析、出力システム<br /><br />
+                            <span>Asp.Net</span><span>SQL Server</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="serniaRight">
+            <div>
+                Skills
+                <div class="skillsImage">
+                    <img src="~/Content/images/skill/c.jpg" alt="C#" />
+                    <img src="~/Content/images/skill/flash.png" alt="flash" />
+                    <img src="~/Content/images/skill/flex.png" alt="flex" />
+                    <img src="~/Content/images/skill/jquery.png" alt="jquery" />
+                    <img src="~/Content/images/skill/mssql.png" alt="mssql" />
+                    <img src="~/Content/images/skill/mysql.png" alt="mysql" />
+                    <img src="~/Content/images/skill/net.jpg" alt="netFrameWork" />
+                    <img src="~/Content/images/skill/node.png" alt="nodeJS" />
+                    <img src="~/Content/images/skill/php.png" alt="PHP" />
+                    <img src="~/Content/images/skill/js.png" alt="JavaScript" />
+                </div>
+            </div>
+            <br />
+            <div>Study Skills
+                <div class="studySkillImage">
+                    <img src="~/Content/images/skill/unity.png" alt="unity" />
+                    <img src="~/Content/images/skill/back.png" alt="backboneJS" />
+                    <img src="~/Content/images/skill/azure.png" alt="azure" />
+                </div>
+            </div>
+        </div>*@
+</div>
+<div style="clear:both;"></div>
+<br />
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            var serniaSubMenuSelectOn = 0;
+            $('.serniaSubMenu ul li').hover(function () {
+                var selectLi = $(this).index();
+                if (serniaSubMenuSelectOn == selectLi)
+                    return;
+
+                $(this).stop().animate({
+                    backgroundColor: '#DDD',
+                    color: '#708090'
+                }, 200);
+
+            }, function () {
+                var selectLi = $(this).index();
+                if (serniaSubMenuSelectOn == selectLi)
+                    return;
+
+                $(this).animate({ backgroundColor: '#666666', color: '#FFF' }, 20);
+            });
+
+            $('.serniaSubMenu ul li').click(function () {
+                serniaSubMenuSelectOn = $(this).index();
+                $('.serniaSubMenu ul li').css({'background-color': 'gray', 'color': 'white'});
+                $(this).css({ 'background-color': 'white', 'color': 'slategray' });
+
+                $(".serniaContents ul li").hide();
+                var selectClass = $(this).attr("class");
+                var historyList = $(".serniaContents ul").find("." + selectClass).show(500, "easeOutSine");
+
+            });
+        });
+
+        //OnClickイベント
+        function contentMove(obj) {
+            var selectLi = $('.serniaContents ul li').index();
+            var count = $('.serniaContents ul li').length - 1;
+            var indexNum = 0;
+
+            (obj == 'next') ? indexNum = ++selectLi : indexNum = -selectLi;
+
+            $(".serniaContents ul li").hide();
+            $(".serniaContents ul li").eq(indexNum).show(500, "easeOutSine");
+
+            //メニュー設定
+            var className = $('.serniaContents ul li').eq(indexNum).attr('class');
+            var serniaMenuName = className.split('_')[0];
+
+            serniaSubMenuSelectOn = indexNum;
+
+            $(".serniaTopMenu ul li").stop().animate({
+                backgroundColor: '#708090',
+                color: '#FFF'
+            }, 200);
+
+            $(".serniaTopMenu ul").find("." + serniaMenuName).stop().animate({
+                backgroundColor: '#FFF',
+                color: '#708090'
+            }, 200);
+
+            $(".serniaSubMenu ul li").stop().animate({
+                backgroundColor: '#666666',
+                color: '#FFF'
+            }, 200);
+
+            $(".serniaSubMenu ul").find("." + className).stop().animate({
+                backgroundColor: '#FFF',
+                color: '#708090'
+            }, 200);
+        }
+
+    </script>
+}

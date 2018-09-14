@@ -1,0 +1,38 @@
+﻿@model IEnumerable<serniaMVC.Models.japaneseHistory>
+
+@{
+    ViewBag.Title = "japaneseIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section fontCss{
+    <style type="text/css">
+        .japaneseList{
+            cursor: pointer;
+        }
+    </style>
+}
+
+<div class="subHeader">ADMIN Japanese Study</div>
+<br />
+@Html.ActionLink("back", "index", null, new { @class = "backbtn", @style ="float: left; margin-left: 20px; padding: 5px;" })
+<div style="clear:both;"></div>
+@foreach (var item in Model){
+    <div class="japaneseList" onclick="listClick('@Html.DisplayFor(model => item.idx)')" style="border: 1px solid #EEE; margin: 10px 20px 0px 20px; font-size: 12px; padding: 5px; background-color: #FFF; ">@Html.DisplayFor(model => item.idx) . @Html.DisplayFor(model => item.title)</div>
+}
+
+<br />
+@section scripts{
+    <script>
+        $('.japaneseList').mouseover(function () {
+            $(this).animate({ backgroundColor: '#000', color: '#FFF' }, 100);
+        }).mouseout(function () {
+            $(this).animate({ backgroundColor: '#FFF', color: '#000' }, 10);
+        });
+
+        function listClick(v) {
+            window.location.href = "/admin/japanesedetail/" + v;
+        }
+
+    </script>
+}

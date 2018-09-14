@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("fontCss", required: false)
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/icono.min.css")
+    @Styles.Render("~/Content/ionicons.min.css")
+</head>
+<body>
+    <div class="background">
+        <div class="contents">
+            <div class="menuLine">
+                <div class="globalMenu">
+                    <span><i class="icono-hamburger" style="margin: 0; color: #CCC;"></i></span>
+                </div>
+                <div class="menuList">
+                    @RenderPage("~/Views/Shared/menuList.cshtml")
+                </div>
+                <div style="float: right;">
+                    <img src="~/Content/images/japan.png" />
+                    <img src="~/Content/images/korea.png" />
+                </div>
+            </div>
+
+            @RenderBody()
+            
+            <div class="footLine">
+                Devloper <span style="font-size: 15px; color: #ff006e">Sernia</span> infomation site PART12 2002-2015
+            </div>
+        </div>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/global")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

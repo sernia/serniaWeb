@@ -1,0 +1,76 @@
+﻿@model serniaMVC.Models.japaneseHistory
+
+@{
+    ViewBag.Title = "japaneseDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section fontCss{
+    <style type="text/css">
+        .jmemo{
+            color:#0094ff;
+        } 
+        .jmemoContent {
+            position: absolute;
+            width: 150px;
+            border: 1px solid #808080;
+            text-align: center;
+            color: #222;
+            font-weight: bold;
+            font-size: 20px;
+            display: none;
+            background: #FFF;
+            padding: 5px;
+            
+        }
+</style>
+
+}
+
+<div class="subHeader">ADMIN Japanese Study</div>
+<div class="devView" style="margin: 20px;">
+    <div style="text-align: left; border-bottom: 1px solid #EEE;">
+        <div style="float: left; margin-left: 10px;">@Html.DisplayFor(model => model.title)</div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div class="japaneseContent" style="font-size: 14px; clear: both; text-align: left; padding: 10px; line-height: 25px; background-color: #FFF;">
+        @Html.Raw(Model.text.ToString().Replace("\r\n", "<br />"));
+    </div>
+</div>
+@Html.ActionLink("back", "japaneseindex", null, new { @class = "backbtn" })
+<br />
+<br />
+
+@Html.Hidden("memo", Html.Raw(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(ViewData["memo"])))
+
+@section scripts{
+    <script>
+        var value = $.parseJSON($('#memo').val());
+
+        var contents = $('.japaneseContent').html();
+
+        for (var i = 0; i < value.length; i++) {
+            var re = new RegExp(value[i].kanzi, 'g');
+            if (contents.match(re)) {
+                contents = contents.replace(re, createMemoLayer(value[i]));
+            }
+        }
+
+        $('.japaneseContent').html(contents);
+
+        $('.japaneseContent').click(function(e){
+            if($(this).find('.jmemoContent').css("display") == 'none'){
+                $(this).find('.jmemoContent').css({display: "block", left: e.pageX});
+            }else{
+                $(this).find('.jmemoContent').hide();
+            }
+        });
+
+        function createMemoLayer(v){
+            var layerTag = '<span class="jmemo">' + v.kanzi + '<div class="jmemoContent">' + v.kanzi + '<br />' + v.katakana + '<br /><span style="font-size: 12px;">' + v.hangul + '</span>' + '</div></span>';
+            return layerTag;
+        }
+
+    </script>
+}

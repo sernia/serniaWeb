@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("fontCss", required: false)
+    @Styles.Render("~/Content/new_css")
+    @Styles.Render("~/Content/icono.min.css")
+    @Styles.Render("~/Content/ionicons.min.css")
+    @Styles.Render("~/Content/bootstrap.min.css")
+</head>
+<body>
+    <div class="contents bg">
+        <div class="container">
+            <div class="row bg-white">
+                <div class="col-xl-12 p-0 menuList">
+                    @RenderPage("~/Views/Shared/menuList.cshtml")
+                </div>
+            </div>
+            @RenderBody()
+            <div class="row bg-white">
+                <div class="col-xl-12 text-center p-2 copylight">
+                    Devloper Sernia infomation site PART12 2002-2015
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/global")
+</body>
+</html>

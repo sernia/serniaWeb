@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section fontCss{
+    <style type="text/css">
+        .adminMenu li {
+            padding: 10px;
+            font-size: 12px;
+            
+        }
+        a {
+            color: #222;
+        }
+    </style>
+}
+
+<div class="subHeader">ADMIN</div>
+<br />
+<div style="text-align: left; margin: 30px; border-bottom: 1px solid #eee; color: #57003d">日本語関連</div>
+<ul class="adminMenu">
+    <li><a href="/admin/japaneseindex">日本語勉強</a></li>
+    <li><a href="/admin/japanesecreate">日本語単語登録</a></li>
+    <li><a href="/admin/japaneseList">日本語単語一覧</a></li>
+    <li><a href="/admin/japanesehistorycreate">日本文書登録</a></li>
+</ul>
+<br /><br />
+<div style="text-align: left; margin: 30px; border-bottom: 1px solid #eee; color: #57003d">開発関連</div>
+<ul class="adminMenu">
+    <li><a href="/admin/devcreate">DEVデータ登録</a></li>
+    <li><a href="/admin/serniahistorycreate">serniaヒストリー登録</a></li>
+</ul>
+
+<br /><br /><br />

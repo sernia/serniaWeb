@@ -1,0 +1,113 @@
+﻿@model serniaMVC.Models.devHistory
+
+@{
+    // クライアントサイド検証を有効にする
+    Html.EnableClientValidation();
+    // 控え目な JavaScript を有効にする
+    Html.EnableUnobtrusiveJavaScript();
+
+    ViewBag.Title = "devCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*言語コード*@
+@*https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases*@
+
+<div class="subHeader">ADMIN Create Dev</div>
+<br />
+<div>
+    @Html.ActionLink("back", "index", null, new { @class = "backbtn", @style = "float: left; margin-left: 20px; padding: 5px;" })
+</div>
+<div style="clear: both;"></div>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.name)<br />
+        @Html.ValidationMessageFor(model => model.name, null, new { @style = "font-size: 12px; color:red;" })
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.title)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.title)<br />
+        @Html.ValidationMessageFor(model => model.title, null, new { @style = "font-size: 12px; color:red;" })
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.details)
+    </div>
+
+    <div class="editor-field">
+        <ul class="ulli"><li>csharp</li><li>html</li><li>sql</li></ul>
+        @Html.TextAreaFor(model => model.details)<br />
+        @Html.ValidationMessageFor(model => model.details, null, new { @style = "font-size: 12px; color:red;" })
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.category)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("category")
+    </div>
+
+    <div class="categoryText">
+        @Html.LabelFor(model => model.category)
+        新しいカテゴリ @Html.CheckBox("categoryCheck")
+        <div>@Html.TextBox("category_empty", string.Empty, new {@style="display: none;" })</div>
+    </div>
+
+    <div class="viewContents">
+
+    </div>
+
+    <p>
+        <input type="submit" value="作成" class="createBtn" />
+    </p>
+    
+    @Html.HiddenFor(model => model.idx)
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        //初期データを挿入
+        if ($('textarea[name="details"]').val().length == 0) {
+            $('textarea[name="details"]').val('<div class="contentsTag">\r\n\r\n\r\n</div>');
+        }
+
+        $('input[name="categoryCheck"]').change(function () {
+            if ($(this).prop('checked'))
+                $('#category_empty').show();
+            else
+                $('#category_empty').hide();
+        });
+
+        $('.ulli li').click(function (e) {
+            $('#details').insertAtCaret(codeTag.replace('%CODE%', $(this).text()));
+        });
+
+        //カーソルにテキストを挿入
+        $.fn.extend({
+            insertAtCaret: function (v) {
+                var o = this.get(0);
+                o.focus();
+                var s = o.value;
+                var p = o.selectionStart;
+                var np = p + v.length;
+                o.value = s.substr(0, p) + v + s.substr(p);
+                o.setSelectionRange(np, np);
+            }
+        });
+
+        var codeTag = '<div class="common"><pre><code id="codeId" class="%CODE%">\n\r</code></pre></div>';
+    </script>
+}

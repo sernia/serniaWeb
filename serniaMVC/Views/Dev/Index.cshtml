@@ -1,0 +1,71 @@
+﻿@model IEnumerable<serniaMVC.Models.devHistory>
+
+
+@{
+    ViewBag.Title = "Devlop list";
+}
+
+@section fontCss{
+    @Styles.Render("~/content/develop.css")
+    @Styles.Render("~/content/simplePagination.css")
+}
+
+<div class="subHeader">DEVELOP</div>
+
+@foreach (var item in Model)
+{
+    <div class="devView">
+        <div class="listHeader">
+            <div style="width: 100px; height: 100px; color:#000; border-right: 2px solid #008fe2; float: left;">
+                <div style="font-size: 40px; color: #003576;">
+                    @Html.DisplayFor(modelItem => item.createdate.Month)
+                    <span style="font-size:15px; color: #666">
+                        / @Html.DisplayFor(modelItem => item.createdate.Day)
+                    </span>
+                </div>
+                <div style="font-size: 11px; margin-top: 15px;">View: 12321</div>
+            </div>
+
+            <div class="devList" style="float: left; width: 744px; margin: 6px;">
+                <div style="float: left; padding: 0 0 0 7px; ">@Html.DisplayFor(modelItem => item.title)</div>
+                <div style="float: right; font-size: 9px; background-color: #008fe2; padding: 2px 5px 2px 5px; color: #FFF">
+                    @Html.DisplayFor(modelItem => item.category)
+                </div>
+                <div style="clear: both; padding: 7px; font-size: 11px; color: #222; text-align:left; word-break:break-all;">
+                    @Html.Raw(@serniaMVC.htmlHelper.strCut(Html.DisplayFor(modelItem => item.details).ToString(), 500))
+                </div>
+            </div>
+        </div>
+        @Html.Hidden("idx", @item.idx.ToString())
+    </div>
+    <div style="clear: both;"></div>
+}
+
+<div style="width: 100%; "><div id="pager"></div></div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $('#pager').pagination({
+                items: '@ViewData["totalPage"]',
+                itemsOnPage: '@ViewData["pageSize"]',
+                cssStyle: 'compact-theme',
+                hrefTextPrefix: '',
+                currentPage: '@Html.ViewContext.RouteData.Values["page"]'
+
+            });
+        });
+
+        $('.devView').mouseover(function () {
+            $(this).css({ background: '#FAFAFA' });
+        }).mouseout(function () {
+            $(this).css({ background: '#FFF' });
+        });
+
+        $('.devView').click(function () {
+            window.location.href = "/ja/dev/details/" + $(this).find('input[name="idx"]').val();
+        });
+
+    </script>
+     @Scripts.Render("~/bundles/pager")
+}

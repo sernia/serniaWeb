@@ -1,0 +1,30 @@
+﻿.container {
+    height: 100%;
+}
+
+.copylight {
+    font-size: 12px;
+}
+
+.box {
+    background: #FFF;
+
+}
+
+.bg {
+    /* The image used */
+    background-image: url("/Content/images/1.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* グロバールメニュー */
+.menuList ul li {
+    margin-top: 2px;
+    padding: 3px 10px 3px 10px;
+    cursor: pointer;
+}

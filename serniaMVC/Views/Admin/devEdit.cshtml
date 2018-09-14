@@ -1,0 +1,62 @@
+﻿@model serniaMVC.Models.devHistory
+
+@{
+    ViewBag.Title = "devEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="subHeader">ADMIN Edit Dev</div>
+<br />
+<div>
+    @Html.ActionLink("back", "index", null, new { @class = "backbtn", @style = "float: left; margin-left: 20px; padding: 5px;" })
+</div>
+<div style="clear: both;"></div>
+<br />
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.idx)
+        @Html.HiddenFor(model => model.createdate)
+        @Html.HiddenFor(model => model.deleteFlg)
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.title)
+            @Html.ValidationMessageFor(model => model.title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.details)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.details)
+            @Html.ValidationMessageFor(model => model.details)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.category)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.category)
+            @Html.ValidationMessageFor(model => model.category)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

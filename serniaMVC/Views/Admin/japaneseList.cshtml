@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "japaneseCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="subHeader">ADMIN Japanese Memo Create</div>
+<br />
+<div>
+    @Html.ActionLink("back", "index", null, new { @class = "backbtn", @style = "float: left; margin-left: 20px; padding: 5px;" })
+</div>
+<div style="clear: both;"></div>
+<br />
+<div style="background-color: #330024; padding: 7px; color: #FFF;"><span><i class="icono-list" style="margin-right: 40px; transform: scale3d(1,1,1);"></i></span>単語リスト</div>
+
+<table align="center" width="600" style="margin-top: 15px; border-top: 1px solid #808080" cellpadding="0" cellspacing="0">
+    @foreach (var i in ViewData["memo"] as IEnumerable<serniaMVC.Models.japaneseMemo>)
+    {
+        <tr>
+            <td style="border-bottom: 1px solid #808080; border-left: 1px solid #808080; height: 35px;">@i.idx</td>
+            <td style="border-bottom: 1px solid #808080; border-left: 1px solid #808080;">@i.kanzi</td>
+            <td style="border-bottom: 1px solid #808080; border-left: 1px solid #808080;">@i.katakana</td>
+            <td style="border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; ">@i.hangul</td>
+        </tr>
+    }
+</table>
+
+@using (@Html.BeginForm())
+{
+    <div>@Html.TextBox("url", null, new { @style = "border: 1px solid #DDD; width: 500px; height: 20px;" })</div>
+    <div>@Html.TextBox("count", null, new { @style = "border: 1px solid #DDD; width: 200px; height: 20px; margin-top: 10px;" })</div>
+    <div><input type="submit" value="取得" style="margin-top: 10px; border: 1px solid #DDD; padding: 10px; background-color:#0094ff; color: #FFF; " /></div>
+}
+<br />
+
+
+
+<br />
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

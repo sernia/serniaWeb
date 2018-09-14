@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="serniaDBModelStoreContainer" CdmEntityContainer="serniaDBEntities">
+    <EntitySetMapping Name="devHistory">
+      <EntityTypeMapping TypeName="serniaDBModel.devHistory">
+        <MappingFragment StoreEntitySet="devHistory">
+          <ScalarProperty Name="idx" ColumnName="idx" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="deleteFlg" ColumnName="deleteFlg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="japaneseHistory">
+      <EntityTypeMapping TypeName="serniaDBModel.japaneseHistory">
+        <MappingFragment StoreEntitySet="japaneseHistory">
+          <ScalarProperty Name="idx" ColumnName="idx" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="japaneseMemo">
+      <EntityTypeMapping TypeName="serniaDBModel.japaneseMemo">
+        <MappingFragment StoreEntitySet="japaneseMemo">
+          <ScalarProperty Name="etc" ColumnName="etc" />
+          <ScalarProperty Name="idx" ColumnName="idx" />
+          <ScalarProperty Name="kanzi" ColumnName="kanzi" />
+          <ScalarProperty Name="katakana" ColumnName="katakana" />
+          <ScalarProperty Name="hangul" ColumnName="hangul" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="serniaHistory">
+      <EntityTypeMapping TypeName="serniaDBModel.serniaHistory">
+        <MappingFragment StoreEntitySet="serniaHistory">
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="idx" ColumnName="idx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="devHistoryList" FunctionName="serniaDBModel.Store.devHistoryList" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,13 @@
+            //HTMLÉRÅ[ÉhÇéÊìæ
+            using (WebClient wc = new WebClient())
+            {
+                wc.Encoding = System.Text.Encoding.UTF8;
+                string html = wc.DownloadString("http://jpdic.naver.com/jlpt/level-1/parts-1/p1.nhn");
+
+                // <script>Å`</script>Ç‚<noscript>Å`</noscript>
+                Regex re1 = new Regex("<div class=\"jlpt_lst\".*?div>",
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+                html = re1.Replace(html, "");
+
+            }

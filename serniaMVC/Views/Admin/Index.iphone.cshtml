@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Admin Top Page";
+    Layout = "~/Views/Shared/_mLayout.cshtml";
+}
+
+@section fontCss{
+    <style type="text/css">
+        .adminMenu li {
+            color: #222;
+            text-align: left;
+            width: 100%;
+            font-size: 13px;
+            line-height: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+    </style>
+}
+
+<div class="subHeader">ADMIN</div>
+<br />
+<ul class="adminMenu">
+    <li style="background-color: #416300; color: #FFF;">
+        <i class="icono-textAlignCenter" style="margin: 0; color: #FFF; transform: scale(0.8, 0.8); margin: 0 10px 0 10px;"></i>日本語関連
+    </li>
+    <li onclick="window.location.href = '/admin/japaneseindex'">        
+        <i class="icono-caretRight" style="color: #416300; transform: scale(0.5, 0.5);"></i>日本語勉強
+    </li>
+    <li onclick="window.location.href = '/admin/japanesecreate'">
+        <i class="icono-caretRight" style="color: #416300; transform: scale(0.5, 0.5);"></i>日本語単語登録
+    </li>
+    <li onclick="window.location.href = '/admin/japanesehistorycreate'">
+        <i class="icono-caretRight" style="color: #416300; transform: scale(0.5, 0.5);"></i>日本文書登録
+    </li>
+</ul>
+<div style="clear:both;"></div>
+<br />
+<ul class="adminMenu">
+    <li style="background-color: #00673b; color: #FFF;">
+        <i class="icono-keyboard" style="margin: 0; color: #FFF; transform: scale(0.8, 0.8); margin: 0 10px 0 10px; "></i>開発関連
+    </li>
+    <li onclick="window.location.href = '/admin/devCreate'">
+        <i class="icono-caretRight" style="margin: 0 5px 0 10px; color: #00673b; transform: scale(0.5, 0.5); margin-right: 10px; "></i>DEVデータ登録
+    </li>
+</ul>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+@section scripts{
+
+}

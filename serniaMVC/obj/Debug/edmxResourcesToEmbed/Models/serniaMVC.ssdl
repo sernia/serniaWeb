@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="serniaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="devHistory">
+    <Key>
+      <PropertyRef Name="idx" />
+    </Key>
+    <Property Name="idx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="details" Type="text" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="deleteFlg" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="japaneseHistory">
+    <Key>
+      <PropertyRef Name="idx" />
+    </Key>
+    <Property Name="idx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="text" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="japaneseMemo">
+    <Key>
+      <PropertyRef Name="idx" />
+    </Key>
+    <Property Name="idx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kanzi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="katakana" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hangul" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="etc" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="serniaHistory">
+    <Key>
+      <PropertyRef Name="idx" />
+    </Key>
+    <Property Name="idx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="details" Type="text" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="devHistoryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PAGE" Type="int" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="int" Mode="In" />
+    <Parameter Name="TOTALPAGE" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="serniaDBModelStoreContainer">
+    <EntitySet Name="devHistory" EntityType="Self.devHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="japaneseHistory" EntityType="Self.japaneseHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="japaneseMemo" EntityType="Self.japaneseMemo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="serniaHistory" EntityType="Self.serniaHistory" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

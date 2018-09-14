@@ -1,0 +1,27 @@
+            //var idParam = new System.Data.SqlClient.SqlParameter
+            //{
+            //    ParameterName = "PAGE",
+            //    Value = 1
+            //};
+            //var idParam2 = new System.Data.SqlClient.SqlParameter
+            //{
+            //    ParameterName = "PAGESIZE",
+            //    Value = 10
+            //};
+            //var votesParam = new System.Data.SqlClient.SqlParameter
+            //{
+            //    ParameterName = "TOTALPAGE",
+            //    Value = 0,
+            //    Direction = System.Data.ParameterDirection.Output
+            //};
+
+            //using (serniaDBEntities context = new serniaDBEntities())
+            //{
+            //    var results = context.Database.SqlQuery<devHistory>(
+            //        "devHistoryList @PAGE, @PAGESIZE, @TOTALPAGE out",
+            //         idParam,
+            //         idParam2,
+            //         votesParam);
+            //    var person = results.Count();
+            //    var votes = (int)votesParam.Value;
+            //}

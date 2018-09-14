@@ -1,0 +1,45 @@
+﻿@model serniaMVC.Models.devHistory
+
+@{
+    ViewBag.Title = "DEVELOP";
+}
+
+<div class="subHeader">DEVELOP</div>
+
+<div style="margin: 20px;">
+    <div style="text-align: left; border-bottom: 1px solid #EEE;">
+        <div style="float: left; font-size: 10px; background-color: #008fe2; padding: 2px 5px 2px 5px; color: #FFF">@Html.DisplayFor(model => model.category)</div>
+        <div style="float: left; margin-left: 10px;">@Html.DisplayFor(model => model.title)</div>
+        <div style="clear:both;"></div>
+    </div>
+    <div style="float:right; font-size: 9px; ">@Html.DisplayFor(model => model.createdate)</div>
+    <br />
+    <div class="devDetails">
+        @Html.Raw(Model.details)
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div><a href="/admin/devcreate/@Model.idx" target="_blank">edit</a></div>
+        }
+    </div>
+</div>
+
+<br />
+
+@Html.ActionLink("List", "index", "Dev", new {page = 1}, new { @class = "backbtn" })
+<br /><br />
+
+@section fontCss{
+    @Styles.Render("~/content/source")
+    @Styles.Render("~/content/develop.css")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/source")
+    <script>
+        hljs.initHighlightingOnLoad();
+        var contentTag = $('.contentsTag').text().replace(/\r?\n/g, '<br />');
+        $('.contentsTag').html(contentTag);
+        $('code').text($('code').html());
+    </script>
+}

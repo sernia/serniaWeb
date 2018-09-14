@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="subHeader">ADMIN Login</div>
+<br />
+@using (@Html.BeginForm())
+{
+    <div>@Html.TextBox("id", null, new {@style = "border: 1px solid #DDD; width: 200px; height: 20px;"})</div>
+    <div>@Html.Password("password", null, new { @style = "border: 1px solid #DDD; width: 200px; height: 20px; margin-top: 10px;" })</div>
+    <div><input type="submit" value="Login" style="margin-top: 10px; border: 1px solid #DDD; padding: 10px; background-color:#0094ff; color: #FFF; " /></div>
+}
+<br />
